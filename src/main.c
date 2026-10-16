@@ -12,11 +12,10 @@ int main (int argc, char *argv[]) {
     printf("bladerf_open status %d\n", status); //Print status of BRF
     status = bladerf_get_fpga_size (dev, &size); // Checking Fpga size
     if (status != 0) {
-        fprintf(stderr,"Error - Unable to get FPGA size : %s\n", bladerf_strerror(size));
-        bladerf_strerror(size);
+        fprintf(stderr,"Error - Unable to get FPGA size : %s\n", bladerf_strerror(status));
         bladerf_close(dev);
         return 1;
     }
-    printf("FPGA size: %d/n" ,(int)size); //Print FPGA Size
+    printf("FPGA size: %d\n" ,(int)size); //Print FPGA Size
     bladerf_close(dev); //Close BladeRF
 }
