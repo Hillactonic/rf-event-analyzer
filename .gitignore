@@ -1,0 +1,36 @@
+# Local IDE settings
+.idea/
+.vscode/
+
+# Out-of-source build directories and generated files
+/build/
+/build-*/
+/cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+compile_commands.json
+*.o
+*.a
+*.so
+*.so.*
+/BladerRFMain
+
+# Captures and binary data (do not publish recordings accidentally)
+/captures/
+*.iq
+*.bin
+*.dat
+*.raw
+*.sc16
+*.sc16q11
+*.cf32
+*.sigmf-data
+
+# Local secrets and Python environments
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+__pycache__/
+.venv/
