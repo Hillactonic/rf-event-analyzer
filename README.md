@@ -13,9 +13,9 @@ It is not yet a complete RF event analyzer.
 - Queries the FPGA variant and checks whether the FPGA is configured.
 - Reports device/API errors and closes the device.
 
-These are code-level capabilities, not a claim of verified hardware operation.
-Successful compilation of this published revision, execution on Raspberry Pi 5,
-and hardware diagnostics have not yet been verified for this publication.
+The author has performed hardware testing during local development. The exact
+test coverage and its correspondence to this published snapshot are not
+documented here; no specific RX test results are claimed in this README.
 
 An interactive command interface exists as unfinished local development and is
 not included in this published snapshot.
@@ -33,12 +33,11 @@ published snapshot.
 ## Development and build
 
 The development source tree is maintained on Arch Linux. Raspberry Pi 5 is used
-as the remote build/run host in the development workflow; this is not evidence
-that this revision has successfully run there.
+as the remote build/run host in the development workflow.
 
 A retained local remote-toolchain log shows successful CMake configuration and
-libbladeRF discovery. It does not demonstrate successful compilation or runtime
-behavior. Machine-specific IDE settings and build logs are not published.
+libbladeRF discovery. Machine-specific IDE settings and build logs are not
+published.
 
 Requirements on the build host:
 
@@ -58,7 +57,6 @@ cmake --build /tmp/rf-event-analyzer/build --target BladerRFMain
 ```
 
 The first command configures the project; the second compiles and links it.
-These commands are instructions, not recorded successful test results.
 For a different checkout location, replace both absolute paths accordingly.
 
 ## Runtime limitations
@@ -66,8 +64,7 @@ For a different checkout location, replace both absolute paths accordingly.
 The device selector opens the first discovered device rather than a specific
 serial number. With multiple devices connected, selection is not explicit.
 Device permissions, firmware/FPGA setup, and hardware availability must be
-checked on the execution host. Running the program accesses hardware and is not
-part of the publication check.
+checked on the execution host. Running the program accesses hardware.
 
 ## Publication history
 
